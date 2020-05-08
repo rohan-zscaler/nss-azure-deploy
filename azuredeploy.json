@@ -1,4 +1,4 @@
-{
+A{
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0",
   "parameters": {
@@ -133,14 +133,6 @@
       "defaultValue": "Zscaler-NSS-SRVC-NIC"
     }
   },
-"resourceTags": {
-       "type": "object",
-       "defaultValue": {
-           "Header_Name": "Thank_You",
-           "Header_Value": "Zscaler"
-       }
-   },
-
   "variables": {
     "sourceOSvhdURL": "https://zsprod.blob.core.windows.net/nss/znss_4_0_4_osdisk.vhd",
     "sourceDataVHDurl": "https://zsprod.blob.core.windows.net/nss/znss_4_0_4_datadisk.vhd",
@@ -179,7 +171,6 @@
       "name": "[variables('vhdStorageAccountName')]",
       "type": "Microsoft.Storage/storageAccounts",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "apiVersion": "2018-07-01",
       "sku": {
         "name": "[variables('vhdStorageAccountSKU')]"
@@ -202,7 +193,6 @@
       "type": "Microsoft.Automation/automationAccounts",
       "apiVersion": "2015-01-01-preview",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts', variables('vhdStorageAccountName'))]"
       ],
@@ -331,7 +321,6 @@
       "apiVersion": "2018-12-01",
       "name": "[parameters('networkSecurityGroupName')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "properties": {
         "securityRules": [
           {
@@ -580,7 +569,6 @@
       "apiVersion": "2015-06-15",
       "name": "[parameters('virtualNetworkName')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]"
       ],
@@ -608,7 +596,6 @@
       "apiVersion": "2018-01-01",
       "name": "[parameters('publicIPAddress1name')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "properties": {
         "publicIPAllocationMethod": "Dynamic"
       }
@@ -618,7 +605,6 @@
       "apiVersion": "2018-01-01",
       "name": "[parameters('publicIPAddress2name')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "properties": {
         "publicIPAllocationMethod": "Dynamic"
       }
@@ -628,7 +614,6 @@
       "apiVersion": "2018-04-01",
       "name": "[parameters('nic1name')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddress1name'))]",
         "[parameters('virtualNetworkName')]"
@@ -657,7 +642,6 @@
       "apiVersion": "2018-04-01",
       "name": "[parameters('nic2name')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddress2name'))]",
         "[parameters('virtualNetworkName')]"
@@ -686,7 +670,6 @@
       "apiVersion": "2018-10-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('resourceTags')]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', parameters('nic1name'))]",
         "[resourceId('Microsoft.Network/networkInterfaces', parameters('nic2name'))]",
