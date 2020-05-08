@@ -166,7 +166,7 @@
     "variables": {
         "sourceOSvhdURL": "resourceId(parameters('sourceOSvhdURL')",
         "sourceDataVHDurl": "resourceId(parameters('sourceDataVHDurl')",
-        "scriptUrl": "https://raw.githubusercontent.com/rohan-zscaler/nss-azure-deploy/master/scripts/copyvhd.ps1",
+        "scriptUrl": "https://raw.githubusercontent.com/rohan-zscaler/nss-azure-deploy/variabalize/scripts/copyvhd.ps1",
         "vhdStorageAccountNamePrefix": "vhdstorage",
         "vhdStorageAccountName": "[toLower(concat(variables('vhdStorageAccountNamePrefix'), uniqueString(subscription().id, resourceGroup().id, deployment().name)))]",
         "vhdStorageAccountSKU": "Standard_LRS",
@@ -181,11 +181,11 @@
         "psModules": {
             "azAccounts": {
                 "name": "Az.Accounts",
-                "url": "https://github.com/rohan-zscaler/nss-azure-deploy/raw/master/assets/az.accounts.1.5.1.nupkg"
+                "url": "https://github.com/rohan-zscaler/nss-azure-deploy/raw/variabalize/assets/az.accounts.1.5.1.nupkg"
             },
             "azStorage": {
                 "name": "Az.Storage",
-                "url": "https://github.com/rohan-zscaler/nss-azure-deploy/raw/master/assets/az.storage.1.2.0.nupkg"
+                "url": "https://github.com/rohan-zscaler/nss-azure-deploy/raw/variabalize/assets/az.storage.1.2.0.nupkg"
             }
         },
         "subnetRef": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
