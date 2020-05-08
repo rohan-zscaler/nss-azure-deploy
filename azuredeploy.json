@@ -142,7 +142,7 @@
   "variables": {
     "sourceOSvhdURL": "https://zsprod.blob.core.windows.net/nss/znss_4_0_4_osdisk.vhd",
     "sourceDataVHDurl": "https://zsprod.blob.core.windows.net/nss/znss_4_0_4_datadisk.vhd",
-    "scriptUrl": "https://raw.githubusercontent.com/zscaler/nss-azure-deploy/master/scripts/copyvhd.ps1",
+    "scriptUrl": "https://raw.githubusercontent.com/rohan-zscaler/nss-azure-deploy/master/scripts/copyvhd.ps1",
     "vhdStorageAccountNamePrefix": "vhdstorage",
     "vhdStorageAccountName": "[toLower(concat(variables('vhdStorageAccountNamePrefix'), uniqueString(subscription().id, resourceGroup().id, deployment().name)))]",
     "vhdStorageAccountSKU": "Standard_LRS",
