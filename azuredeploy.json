@@ -135,8 +135,7 @@
     "resourceTags": {
        "type": "object",
        "defaultValue": {
-           "TAG_NAME": "Created_By",
-           "TAG_VALUE": "Zscaler_ARM_Template"
+           "Created_By": "Zscaler_ARM_Template",
        }
    }   
   },
