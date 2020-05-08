@@ -136,7 +136,7 @@
        "type": "object",
        "defaultValue": {
            "Created_By": "Zscaler_ARM_Template"
-       }
+       },
    }   
   },
   "variables": {
