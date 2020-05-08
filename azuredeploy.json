@@ -157,11 +157,11 @@
     "psModules": {
       "azAccounts": {
         "name": "Az.Accounts",
-        "url": "https://github.com/zscaler/nss-azure-deploy/raw/master/assets/az.accounts.1.5.1.nupkg"
+        "url": "https://github.com/rohan-zscaler/nss-azure-deploy/raw/master/assets/az.accounts.1.5.1.nupkg"
       },
       "azStorage": {
         "name": "Az.Storage",
-        "url": "https://github.com/zscaler/nss-azure-deploy/raw/master/assets/az.storage.1.2.0.nupkg"
+        "url": "https://github.com/rohan-zscaler/nss-azure-deploy/raw/master/assets/az.storage.1.2.0.nupkg"
       }
     },
     "subnetRef": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
