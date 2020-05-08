@@ -132,6 +132,13 @@ A{
       },
       "defaultValue": "Zscaler-NSS-SRVC-NIC"
     }
+       "resourceTags": {
+       "type": "object",
+       "defaultValue": {
+           "Environment": "Dev",
+           "Project": "Tutorial"
+       }
+   }
   },
   "variables": {
     "sourceOSvhdURL": "https://zsprod.blob.core.windows.net/nss/znss_4_0_4_osdisk.vhd",
