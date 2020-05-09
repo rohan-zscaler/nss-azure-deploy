@@ -316,7 +316,7 @@
                             "newStorageAccountName": "[variables('vhdStorageAccountName')]",
                             "newStorageAccountContainerName": "[variables('vhdStorageAccountContainerName')]",
                             "destVHDname": "[variables('destOSvhdName')]",
-                            "vhdURL": "[variables('sourceOSvhdURL')]",
+                            "vhdURL": "[parameters('sourceOSvhdURL')]",
                             "sasToken": "[parameters('SAS-Token')]"
                         }
                     }
@@ -341,7 +341,7 @@
                             "newStorageAccountName": "[variables('vhdStorageAccountName')]",
                             "newStorageAccountContainerName": "[variables('vhdStorageAccountContainerName')]",
                             "destVHDname": "[variables('destDataVHDname')]",
-                            "vhdURL": "[variables('sourceDataVHDurl')]",
+                            "vhdURL": "[parameters('sourceDataVHDurl')]",
                             "sasToken": "[parameters('SAS-Token')]"
                         }
                     }
